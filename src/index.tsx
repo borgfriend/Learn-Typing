@@ -9,8 +9,8 @@ import { Router } from 'react-router';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import * as stores from './Stores';
 import { routingStore } from './Stores/routingStore';
-const browserHistory = createBrowserHistory();
 
+const browserHistory = createBrowserHistory({ basename: process.env.PUBLIC_URL });
 const history = syncHistoryWithStore(browserHistory, routingStore);
 
 ReactDOM.render(
