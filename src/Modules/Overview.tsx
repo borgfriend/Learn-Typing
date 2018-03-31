@@ -27,7 +27,7 @@ const LessonCard: React.SFC<LessonCardProps> = (props) => {
                     size="small"
                     color="primary"
                     onClick={() =>
-                        routingStore.push(`/lesson${props.lesson.id}`)
+                        routingStore.pushBase(`/lesson${props.lesson.id}`)
                     }
                 >
                     Start Lesson

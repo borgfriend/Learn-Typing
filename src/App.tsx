@@ -13,7 +13,7 @@ const Navigation: React.SFC = () => (
         variant="title"
         color="inherit"
         onClick={() =>
-          routingStore.push(`/`)
+          routingStore.pushBase(`/`)
         }
       >
         Learn Typing
