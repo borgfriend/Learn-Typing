@@ -4,13 +4,13 @@ import App from './App';
 import 'typeface-roboto';
 import './index.css';
 import { Provider } from 'mobx-react';
-import createBrowserHistory from 'history/createBrowserHistory';
+import createHashHistory from 'history/createHashHistory';
 import { Router } from 'react-router';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import * as stores from './Stores';
 import { routingStore } from './Stores/routingStore';
 
-const browserHistory = createBrowserHistory({ basename: process.env.PUBLIC_URL });
+const browserHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 const history = syncHistoryWithStore(browserHistory, routingStore);
 
 ReactDOM.render(
