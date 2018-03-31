@@ -15,6 +15,10 @@ export class Exercise extends React.Component {
         exerciseStore.setExercise();
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('keypress', this.handleKeyPress);
+    }
+
     handleKeyPress = (e: KeyboardEvent) => {
         let { currentIndex, pressedKey } = exerciseStore;
         if (e.keyCode === 32 && e.target === document.body) {
@@ -22,7 +26,6 @@ export class Exercise extends React.Component {
         }
 
         if (currentIndex === exerciseStore.text.length) {
-            document.removeEventListener('keypress', this.handleKeyPress);
             exerciseStore.endLesson();
             return;
         }

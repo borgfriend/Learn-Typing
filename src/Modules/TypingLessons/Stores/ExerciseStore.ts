@@ -17,7 +17,6 @@ class ExerciseStore {
 
     @action.bound
     pressedKey(val: string) {
-
         this.exerciseFields[this.currentIndex].userReturn = val;
         this.exerciseFields[this.currentIndex].color =
             (this.exerciseFields[this.currentIndex].value === val) ? 'lightgreen' : 'red';
