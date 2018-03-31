@@ -10,8 +10,8 @@ import { syncHistoryWithStore } from 'mobx-react-router';
 import * as stores from './Stores';
 import { routingStore } from './Stores/routingStore';
 
-const browserHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
-const history = syncHistoryWithStore(browserHistory, routingStore);
+const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+const history = syncHistoryWithStore(hashHistory, routingStore);
 
 ReactDOM.render(
   <Provider {...stores}>

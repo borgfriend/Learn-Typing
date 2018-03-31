@@ -13,39 +13,35 @@ interface LessonCardProps {
     lesson: Lesson;
 }
 
-const LessonCard: React.SFC<LessonCardProps> = (props) => {
-    return (
-        <Card>
-            <CardContent>
-                <Typography gutterBottom={true} variant="headline" component="h2">
-                    {props.lesson.title}
-                </Typography>
-                {props.lesson.description}
-            </CardContent>
-            <CardActions>
-                <Button
-                    size="small"
-                    color="primary"
-                    onClick={() =>
-                        routingStore.push(`/lesson${props.lesson.id}`)
-                    }
-                >
-                    Start Lesson
-                </Button>
-            </CardActions>
-        </Card>
-    );
-};
+const LessonCard: React.SFC<LessonCardProps> = ({ lesson }) => (
+    <Card>
+        <CardContent>
+            <Typography gutterBottom={true} variant="headline" component="h2">
+                {lesson.title}
+            </Typography>
+            {lesson.description}
+        </CardContent>
+        <CardActions>
+            <Button
+                size="small"
+                color="primary"
+                onClick={() =>
+                    routingStore.push(`/lesson${lesson.id}`)
+                }
+            >
+                Start Lesson
+            </Button>
+        </CardActions>
+    </Card>
+);
 
 export const Overview: React.SFC = () => {
 
-    const overview = lessonData.map((val, key) => {
-        return (
-            <Grid item={true} sm={4} key={key}>
-                <LessonCard lesson={val} />
-            </Grid>
-        );
-    });
+    const overview = lessonData.map((val) => (
+        <Grid item={true} sm={4} key={val.id}>
+            <LessonCard lesson={val} />
+        </Grid>
+    ));
 
     return (
         <Grid container={true} spacing={24}>
