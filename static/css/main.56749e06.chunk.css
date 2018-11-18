@@ -1,0 +1,2 @@
+@-webkit-keyframes cursor-blink{0%{background-color:#ff0}to{background-color:initial}}@keyframes cursor-blink{0%{background-color:#ff0}to{background-color:initial}}.current{background-color:#ff0;-webkit-animation:cursor-blink 1s infinite;animation:cursor-blink 1s infinite}body{margin:0;padding:0;font-family:Roboto,sans-serif}
+/*# sourceMappingURL=main.56749e06.chunk.css.map */
