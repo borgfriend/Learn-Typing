@@ -1,3 +1,2 @@
-import { routingStore } from './routingStore';
+export { routingStore } from './routingStore';
 
-export { routingStore };

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import Button from 'material-ui/Button';
+
 import { observer } from 'mobx-react';
 import { exerciseStore } from '../Stores/ExerciseStore';
+import { Button } from '@blueprintjs/core';
 
 export const ResultDisplay: React.SFC = observer(() => (
     <>

@@ -1,46 +1,43 @@
+import { Button, Navbar } from '@blueprintjs/core';
+import { inject } from 'mobx-react';
+import { RouterStore } from 'mobx-react-router';
 import * as React from 'react';
 import { Route } from 'react-router-dom';
-
-import Overview from './Modules/Overview';
-import { AppBar, Typography, Toolbar, Grid, Paper } from 'material-ui';
-import { routingStore } from './Stores';
+import { Overview } from './Modules/Overview';
 import { TypingLesson } from './Modules/TypingLessons/TypingLesson';
 
-const Navigation: React.SFC = () => (
-  <AppBar position="static">
-    <Toolbar>
-      <Typography
-        variant="title"
-        color="inherit"
-        onClick={() =>
-          routingStore.push(`/`)
-        }
-      >
-        Learn Typing
-      </Typography>
-    </Toolbar>
-  </AppBar>
-);
+@inject("routingStore")
+class Navigation extends React.Component<{ routingStore?: RouterStore }>{
+  render() {
+    return (
+      <Navbar>
+        <Navbar.Group>
+          <Navbar.Heading>
+            Learn Typing
+          </Navbar.Heading>
+          <Button minimal={true} icon="home" onClick={this.goHome}>Home</Button>
+        </Navbar.Group>
+      </Navbar>
+    );
+  }
+
+  private goHome = () => {
+    this.props.routingStore!.push(`/`);
+  }
+}
 
 class App extends React.Component<{}, {}> {
   render() {
     return (
       <>
         <Navigation />
-        <div style={{ padding: '1rem' }}>
-          <Grid container={true} justify="center" >
-            <Grid item={true} xs={8}>
-              <Route exact={true} path="/" component={Overview} />
-              <Route
-                path="/lesson:id"
-                render={({ match }) => (
-                  <Paper elevation={4} style={{ padding: '1rem' }}>
-                    <TypingLesson lessonId={match.params.id} />
-                  </Paper>)}
-              />
-            </Grid>
-          </Grid>
-        </div>
+        <Route exact={true} path="/" component={Overview} />
+        <Route
+          path="/lesson:id"
+          render={({ match }) => (
+              <TypingLesson lessonId={match.params.id} />
+           )}
+        />
       </>
     );
   }

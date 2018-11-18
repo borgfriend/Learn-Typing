@@ -1,36 +1,42 @@
 {
-    "name": "typing-lesson",
-    "version": "0.5.0",
-    "private": true,
-    "dependencies": {
-        "@types/jest": "^22.2.2",
-        "@types/node": "^9.6.1",
-        "@types/react": "^16.1.0",
-        "@types/react-dom": "^16.0.2",
-        "@types/react-router": "^4.0.23",
-        "@types/react-router-dom": "^4.2.6",
-        "material-ui": "^1.0.0-beta.39",
-        "mobx": "^4.1.1",
-        "mobx-react": "^5.0.0",
-        "mobx-react-router": "^4.0.2",
-        "react": "^16.3.0",
-        "react-dom": "^16.3.0",
-        "react-router": "4.2.0",
-        "react-router-dom": "4.2.2",
-        "react-scripts-ts": "^2.14.0",
-        "typeface-roboto": "^0.0.54",
-        "typescript": "^2.8.1"
-    },
-    "devDependencies": {
-        "gh-pages": "^1.1.0"
-    },
-    "scripts": {
-        "start": "react-scripts-ts start",
-        "build": "react-scripts-ts build",
-        "test": "react-scripts-ts test --env=jsdom",
-        "eject": "react-scripts-ts eject",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
-    },
-    "homepage": "http://typing.nealbuerger.com/"
+  "name": "typing-lesson",
+  "version": "0.5.0",
+  "private": true,
+  "dependencies": {
+    "@blueprintjs/core": "^3.9.0",
+    "@types/jest": "^22.2.2",
+    "@types/node": "^9.6.1",
+    "@types/react": "^16.1.0",
+    "@types/react-dom": "^16.0.2",
+    "@types/react-router": "^4.0.23",
+    "@types/react-router-dom": "^4.2.6",
+    "mobx": "^4.6.0",
+    "mobx-react": "^5.3.6",
+    "mobx-react-router": "^4.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.3.0",
+    "react-router": "4.2.0",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "^2.1.1",
+    "typeface-roboto": "^0.0.54",
+    "typescript": "^3.1.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "http://typing.nealbuerger.com/",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
