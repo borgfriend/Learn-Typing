@@ -1,8 +1,9 @@
 /// <reference path="./resources/lessons.d.ts" />
 
-import { Button, Card } from '@blueprintjs/core';
+import { Card } from '@blueprintjs/core';
 import * as React from 'react';
 import { routingStore } from '../Stores';
+import { Button } from '../components/Button/Button';
 
 
 const lessonData: Array<Lesson> = require('./resources/lessons.json');
