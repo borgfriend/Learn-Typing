@@ -1,23 +1,18 @@
-import { Button, Navbar } from '@blueprintjs/core';
 import { inject } from 'mobx-react';
 import { RouterStore } from 'mobx-react-router';
 import * as React from 'react';
 import { Route } from 'react-router-dom';
 import { Overview } from './Modules/Overview';
 import { TypingLesson } from './Modules/TypingLessons/TypingLesson';
+import { NavBar } from './components/NavBar/NavBar';
 
 @inject("routingStore")
 class Navigation extends React.Component<{ routingStore?: RouterStore }>{
   render() {
     return (
-      <Navbar>
-        <Navbar.Group>
-          <Navbar.Heading>
-            Learn Typing
-          </Navbar.Heading>
-          <Button minimal={true} icon="home" onClick={this.goHome}>Home</Button>
-        </Navbar.Group>
-      </Navbar>
+      <NavBar>
+        <h1 onClick={this.goHome}>Learn Typing</h1>
+      </NavBar>
     );
   }
 

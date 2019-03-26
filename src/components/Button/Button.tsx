@@ -1,11 +1,23 @@
 import * as React from 'react';
 import styles from './Button.module.css';
 
-interface IButtonProps{
+type colors = 'default' | 'primary'
+
+interface IButtonProps {
     onClick: () => void;
+    color?: colors;
 }
-export const Button:React.SFC<IButtonProps> = ({onClick, children}) => {
-    return <button className={styles.button} onClick={onClick}>
-        {children}
-    </button>
+/**
+ * A Button Component
+ * A button executes 
+ * @param props
+ */
+export const Button: React.SFC<IButtonProps> = ({ onClick, children, color = 'default' }) => {
+    return (<button
+        className={`${styles.button} ${styles[color]}`}
+        onClick = { onClick }
+        color={`${color}`}
+        >
+        { children }
+    </button >);
 }
