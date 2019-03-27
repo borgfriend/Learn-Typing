@@ -15,7 +15,7 @@ interface LessonCardProps {
 
 const LessonCard: React.SFC<LessonCardProps> = ({ lesson }) => (
   <Card>
-    <h5>{lesson.title}</h5>
+    <h2>{lesson.title}</h2>
     <p>{lesson.description}</p>
 
     <Button

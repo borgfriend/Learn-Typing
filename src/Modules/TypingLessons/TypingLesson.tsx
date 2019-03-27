@@ -9,6 +9,7 @@ import { observer } from 'mobx-react';
 import { exerciseStore } from './Stores/ExerciseStore';
 import { Exercise } from './Components/Exercise';
 import { ResultDisplay } from './Components/ResultDisplay';
+import { Card } from '../../components/Card/Card';
 
 interface TypingLessonProps {
     lessonId: string;
@@ -28,9 +29,9 @@ export class TypingLesson extends React.Component<TypingLessonProps> {
 
     render() {
         return (
-            <>
+            <Card>
                 {exerciseStore.lessonComplete ? (<ResultDisplay />) : (<Exercise />)}
-            </>
+            </Card>
         );
     }
 }
