@@ -1,6 +1,6 @@
 import { action, observable, computed } from 'mobx';
 
-interface CharField {
+export interface CharField {
     value: string;
     userReturn?: string;
     color: string;
@@ -19,7 +19,7 @@ class ExerciseStore {
     pressedKey(val: string) {
         this.exerciseFields[this.currentIndex].userReturn = val;
         this.exerciseFields[this.currentIndex].color =
-            (this.exerciseFields[this.currentIndex].value === val) ? 'lightgreen' : 'red';
+            (this.exerciseFields[this.currentIndex].value === val) ? 'ok' : 'error';
         this.currentIndex++;
     }
 
@@ -36,7 +36,6 @@ class ExerciseStore {
 
     @computed
     get mistakes() {
-        console.log(this.exerciseFields);
         return this.exerciseFields.filter(val => val.color === 'red').length;
     }
 

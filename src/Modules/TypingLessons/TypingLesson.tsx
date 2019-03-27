@@ -3,8 +3,6 @@ import * as React from 'react';
 
 var lessonData = require('./../resources/lessons.json');
 
-import './TypingLesson.css';
-
 import { observer } from 'mobx-react';
 import { exerciseStore } from './Stores/ExerciseStore';
 import { Exercise } from './Components/Exercise';
@@ -28,10 +26,19 @@ export class TypingLesson extends React.Component<TypingLessonProps> {
     }
 
     render() {
-        return (
-            <Card>
-                {exerciseStore.lessonComplete ? (<ResultDisplay />) : (<Exercise />)}
-            </Card>
-        );
+        if (exerciseStore.lessonComplete){
+            return (
+                <Card>
+                    <ResultDisplay />
+                </Card>
+            );
+        } else {
+            return (
+                <Card>
+                    <Exercise />
+                </Card>
+            );
+        }
+
     }
 }

@@ -2,13 +2,10 @@ import * as React from 'react';
 
 import { observer } from 'mobx-react';
 import { exerciseStore } from '../Stores/ExerciseStore';
+import { ExerciseChar } from '../../../components/ExerciseChar/ExerciseChar';
 
 @observer
 export class Exercise extends React.Component {
-
-    textStyle = {
-        fontFamily: 'Courier New'
-    };
 
     componentDidMount() {
         document.addEventListener('keypress', this.handleKeyPress);
@@ -21,7 +18,7 @@ export class Exercise extends React.Component {
 
     handleKeyPress = (e: KeyboardEvent) => {
         let { currentIndex, pressedKey } = exerciseStore;
-        if (e.keyCode === 32 && e.target === document.body) {
+        if (e.key === "Space" && e.target === document.body) {
             e.preventDefault();
         }
 
@@ -44,20 +41,15 @@ export class Exercise extends React.Component {
     render() {
         const text = exerciseStore.exerciseFields
             .map((item, key) => (
-                <span
+                <ExerciseChar
                     key={key}
-                    style={{
-                        backgroundColor: item.color
-                    }}
-                    className={`${(key === exerciseStore.currentIndex) ? 'current' : ''}`}
-                >
-                    {item.value === '\n' && (<span className="enter"> <br /></span>)}
-                    {item.value}
-                </span>
+                    data={item}
+                    isCurrent={key === exerciseStore.currentIndex}
+                />
             ));
 
         return (
-            <section style={this.textStyle}>
+            <section>
                 {text}
             </section>
         );
