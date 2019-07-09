@@ -21,7 +21,7 @@
     "@types/react-router-dom": "^4.3.3",
     "gh-pages": "^2.0.1",
     "react-scripts": "^3.0.1",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
