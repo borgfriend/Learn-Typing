@@ -1,24 +1,19 @@
-import { inject } from 'mobx-react';
-import { RouterStore } from 'mobx-react-router';
 import * as React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { Overview } from './Modules/Overview';
 import { TypingLesson } from './Modules/TypingLessons/TypingLesson';
 import { NavBar } from './components/NavBar/NavBar';
 
-@inject("routingStore")
-class Navigation extends React.Component<{ routingStore?: RouterStore }>{
+
+class Navigation extends React.Component {
   render() {
     return (
       <NavBar>
-        <h1 onClick={this.goHome}>Learn Typing</h1>
+        <Link to="/"><h1>Learn Typing</h1></Link>
       </NavBar>
     );
   }
 
-  private goHome = () => {
-    this.props.routingStore!.push(`/`);
-  }
 }
 
 class App extends React.Component<{}, {}> {
@@ -30,8 +25,8 @@ class App extends React.Component<{}, {}> {
         <Route
           path="/lesson:id"
           render={({ match }) => (
-              <TypingLesson lessonId={match.params.id} />
-           )}
+            <TypingLesson lessonId={match.params.id} />
+          )}
         />
       </>
     );

@@ -4,12 +4,12 @@ import styles from './Button.module.css';
 type colors = 'default' | 'primary'
 
 interface IButtonProps {
-    onClick: () => void;
+    onClick?: () => void;
     color?: colors;
 }
 /**
  * A Button Component
- * A button executes 
+ * A button executes
  * @param props
  */
 export const Button: React.SFC<IButtonProps> = ({ onClick, children, color = 'default' }) => {

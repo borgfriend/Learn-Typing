@@ -1,2 +1,0 @@
-export { routingStore } from './routingStore';
-

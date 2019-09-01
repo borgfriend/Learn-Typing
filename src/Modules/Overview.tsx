@@ -2,9 +2,9 @@
 
 
 import * as React from 'react';
-import { routingStore } from '../Stores';
 import { Button } from '../components/Button/Button';
 import { Card } from '../components/Card/Card';
+import { Link } from 'react-router-dom';
 
 
 const lessonData: Array<Lesson> = require('./resources/lessons.json');
@@ -17,14 +17,12 @@ const LessonCard: React.SFC<LessonCardProps> = ({ lesson }) => (
   <Card>
     <h2>{lesson.title}</h2>
     <p>{lesson.description}</p>
+    <Link to={`/lesson${lesson.id}`}>
+      <Button>
+        Start Lesson
+      </Button>
+    </Link>
 
-    <Button
-      onClick={() =>
-        routingStore.push(`/lesson${lesson.id}`)
-      }
-    >
-      Start Lesson
-    </Button>
 
   </Card>
 );
