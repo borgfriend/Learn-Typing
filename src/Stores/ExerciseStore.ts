@@ -1,4 +1,6 @@
-import { action, computed, observable } from 'mobx';
+import { action, computed, observable } from "mobx";
+import lessonData from './../resources/lessons.json';
+
 
 export interface CharField {
   value: string;
@@ -11,32 +13,38 @@ class ExerciseStore {
   @observable currentIndex: number = 0;
   @observable lessonComplete: boolean = false;
 
-  text: string = '';
+  lessonId: string;
+  lesson: Lesson;
   startTime: Date;
   endTime: Date;
 
+  loadLesson() {
+    this.lesson = lessonData.find((val: Lesson) => {
+      return val.id.toString() === this.lessonId;
+    });
+  }
+
   @action.bound
-  pressedKey(val: string) {
+  processPressedKey(val: string): void {
     this.exerciseFields[this.currentIndex].userReturn = val;
     this.exerciseFields[this.currentIndex].color =
-      (this.exerciseFields[this.currentIndex].value === val) ? 'ok' : 'error';
+      this.exerciseFields[this.currentIndex].value === val ? "ok" : "error";
     this.currentIndex++;
   }
 
   @action
   setExercise() {
+    this.loadLesson();
     this.exerciseFields = [];
-    this.text
-      .split('')
-      .forEach((item) => {
-        this.exerciseFields.push({ value: item, color: 'transparent' });
-      });
+    this.lesson.lesson.split("").forEach(item => {
+      this.exerciseFields.push({ value: item, color: "transparent" });
+    });
     this.currentIndex = 0;
   }
 
   @computed
   get mistakes() {
-    return this.exerciseFields.filter(val => val.color === 'red').length;
+    return this.exerciseFields.filter(val => val.color === "red").length;
   }
 
   @action
@@ -61,7 +69,6 @@ class ExerciseStore {
   get time() {
     return (this.endTime.getTime() - this.startTime.getTime()) / 1000;
   }
-
 }
 
 export const exerciseStore = new ExerciseStore();
