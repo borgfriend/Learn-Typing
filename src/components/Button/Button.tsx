@@ -12,7 +12,7 @@ interface IButtonProps {
  * A button executes
  * @param props
  */
-export const Button: React.SFC<IButtonProps> = ({ onClick, children, color = 'default' }) => {
+export const Button: React.FC<IButtonProps> = ({ onClick, children, color = 'default' }) => {
     return (<button
         className={`${styles.button} ${styles[color]}`}
         onClick = { onClick }

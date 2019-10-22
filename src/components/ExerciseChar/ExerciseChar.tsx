@@ -8,7 +8,7 @@ interface IExerciseChar {
     isCurrent: boolean;
 }
 
-export const ExerciseChar:React.SFC<IExerciseChar> = ({data, isCurrent}) => {
+export const ExerciseChar:React.FC<IExerciseChar> = ({data, isCurrent}) => {
     return (
         <span 
             className={styles.exerciseChar} 

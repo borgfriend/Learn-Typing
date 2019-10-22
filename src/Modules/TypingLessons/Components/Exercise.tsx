@@ -8,12 +8,12 @@ import { ExerciseChar } from '../../../components/ExerciseChar/ExerciseChar';
 export class Exercise extends React.Component {
 
     componentDidMount() {
-        document.addEventListener('keypress', this.handleKeyPress);
+        document.addEventListener('keydown', this.handleKeyPress);
         exerciseStore.setExercise();
     }
 
     componentWillUnmount() {
-        document.removeEventListener('keypress', this.handleKeyPress);
+        document.removeEventListener('keydown', this.handleKeyPress);
     }
 
     handleKeyPress = (e: KeyboardEvent) => {

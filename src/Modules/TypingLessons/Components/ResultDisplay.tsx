@@ -5,7 +5,7 @@ import { exerciseStore } from '../Stores/ExerciseStore';
 import { Button } from '../../../components/Button/Button';
 
 
-export const ResultDisplay: React.SFC = observer(() => (
+export const ResultDisplay: React.FC = observer(() => (
     <>
         <ul>
             <li>Mistakes: {exerciseStore.mistakes}</li>

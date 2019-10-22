@@ -5,9 +5,8 @@ import { Card } from '../../components/Card/Card';
 import { Exercise } from './Components/Exercise';
 import { ResultDisplay } from './Components/ResultDisplay';
 import { exerciseStore } from './Stores/ExerciseStore';
+import lessonData from './../resources/lessons.json';
 
-
-var lessonData = require('./../resources/lessons.json');
 interface TypingLessonProps {
   lessonId: string;
 }
