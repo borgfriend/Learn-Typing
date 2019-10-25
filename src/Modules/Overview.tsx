@@ -8,7 +8,7 @@ interface LessonCardProps {
   lesson: Lesson;
 }
 
-const LessonCard: React.SFC<LessonCardProps> = ({ lesson }) => (
+const LessonCard: React.FC<LessonCardProps> = ({ lesson }) => (
   <Card>
     <h2>{lesson.title}</h2>
     <p>{lesson.description}</p>
@@ -18,11 +18,9 @@ const LessonCard: React.SFC<LessonCardProps> = ({ lesson }) => (
   </Card>
 );
 
-export const Overview: React.SFC = () => {
+export const Overview: React.FC = () => {
   const overview = lessonData.map(val => (
-    <div key={val.id}>
-      <LessonCard lesson={val} />
-    </div>
+    <LessonCard key={val.id} lesson={val} />
   ));
 
   return <div>{overview}</div>;
