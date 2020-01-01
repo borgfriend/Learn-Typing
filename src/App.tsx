@@ -23,7 +23,7 @@ const App: React.FC = () => (
       render={({ match }) => {
         window.scrollTo(0, 0);
         exerciseStore.lessonId = match.params.id;
-        return <TypingLesson lessonId={match.params.id} />;
+        return <TypingLesson />;
       }}
     />
   </main>

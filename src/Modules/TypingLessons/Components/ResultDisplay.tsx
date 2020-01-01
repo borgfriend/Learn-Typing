@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { observer } from 'mobx-react';
+import { useObserver } from 'mobx-react';
 import { exerciseStore } from '../../../Stores/ExerciseStore';
 import { Button } from '../../../components/Button/Button';
 
 
-export const ResultDisplay: React.FC = observer(() => (
+export const ResultDisplay: React.FC = () => useObserver(()=>(
     <>
         <ul>
             <li>Mistakes: {exerciseStore.mistakes}</li>
