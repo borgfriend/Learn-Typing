@@ -5,7 +5,7 @@ import lessonData from './../resources/lessons.json';
 export interface CharField {
   value: string;
   userReturn?: string;
-  color: string;
+  color: "ok" | "error" | "transparent";
 }
 
 class ExerciseStore {
@@ -44,7 +44,7 @@ class ExerciseStore {
 
   @computed
   get mistakes() {
-    return this.exerciseFields.filter(val => val.color === "red").length;
+    return this.exerciseFields.filter(val => val.color === "error").length;
   }
 
   @action
