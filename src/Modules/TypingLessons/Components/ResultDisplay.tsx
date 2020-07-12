@@ -1,29 +1,20 @@
 import * as React from "react";
 
 import { Button } from "../../../components/Button/Button";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  calculateTime,
-  ExerciseData,
-  reset
-} from "../../../Stores/ExerciseStore";
 
-export const ResultDisplay: React.FC = () => {
-  const { mistakes, time } = useSelector((state: ExerciseData) => {
-    return {
-      mistakes: state.mistakes,
-      time: calculateTime(state)
-    };
-  });
-  const dispatch = useDispatch();
-  const resetHandler = () => dispatch(reset());
+
+export const ResultDisplay: React.FC<{
+  mistakes: number;
+  time: number;
+  resetAction: () => void;
+}> = ({ mistakes, time, resetAction }) => {
   return (
     <>
       <ul>
         <li>Mistakes: {mistakes}</li>
         <li>Time: {time}</li>
       </ul>
-      <Button onClick={resetHandler}>Reset</Button>
+      <Button onClick={resetAction}>Reset</Button>
     </>
   );
 };

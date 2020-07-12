@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styles from './ExerciseChar.module.css'
 
-import { CharField } from '../../Stores/ExerciseStore';
-
 interface IExerciseChar {
     data: CharField;
     isCurrent: boolean;
