@@ -4,8 +4,7 @@ import i18n from "../src/i18n/en.json";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Overview } from "./Modules/Overview";
 import { TypingLesson } from "./Modules/TypingLessons/TypingLesson";
-import { useDispatch } from "react-redux";
-import { setExercise } from "./Stores/ExerciseStore";
+import { loadLesson } from "./resources/loadLesson";
 
 const Navigation: React.FC = () => (
   <NavBar>
@@ -16,7 +15,6 @@ const Navigation: React.FC = () => (
 );
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
   return (
     <main>
       <Navigation />
@@ -25,8 +23,11 @@ const App: React.FC = () => {
         path="/lesson:id"
         render={({ match }) => {
           window.scrollTo(0, 0);
-          dispatch(setExercise(match.params.id));
-          return <TypingLesson />;
+
+          const lessonId = parseInt(match.params.id, 10);
+          const lesson = loadLesson(lessonId);
+          
+          return <TypingLesson lesson={lesson} />;
         }}
       />
     </main>

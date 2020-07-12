@@ -3,7 +3,6 @@ import * as React from "react";
 import { Button } from "../../../components/Button/Button";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  calculateMistakes,
   calculateTime,
   ExerciseData,
   reset
@@ -12,7 +11,7 @@ import {
 export const ResultDisplay: React.FC = () => {
   const { mistakes, time } = useSelector((state: ExerciseData) => {
     return {
-      mistakes: calculateMistakes(state),
+      mistakes: state.mistakes,
       time: calculateTime(state)
     };
   });

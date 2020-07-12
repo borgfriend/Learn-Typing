@@ -1,39 +1,39 @@
 import React, { useEffect } from "react";
 import { ExerciseChar } from "../../../components/ExerciseChar/ExerciseChar";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   endLesson,
   startLesson,
-  ExerciseData,
-  processPressedKey
+  CharField
 } from "../../../Stores/ExerciseStore";
-import { store } from "../../../Stores/store";
 
-export const Exercise: React.FC = () => {
+export const Exercise: React.FC<{lesson: CharField[]}> = ({lesson =[]}) => {
   const dispatch = useDispatch();
+  const [exerciseFields, setExerciseFields] = React.useState(lesson);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  const { lesson, currentIndex, exerciseFields } = useSelector(
-    (state: ExerciseData) => state
-  );
-  const isLastIndex = currentIndex === lesson.lesson.length
+  const isLastIndex = currentIndex === exerciseFields.length
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      const { currentIndex } = store.getState();
       if (e.key === "Space" && e.target === document.body) {
         e.preventDefault();
       }
 
       if (isLastIndex) {
-        dispatch(endLesson());
+        dispatch(endLesson({mistakeCount: calculateMistakes(exerciseFields)}));
         return;
       }
+      const keyValue =(e.key === "Enter") ? "\n" : e.key;
 
-      if (e.key === "Enter") {
-        dispatch(processPressedKey("\n"));
-      } else {
-        dispatch(processPressedKey(e.key));
+      const newExerciseFields = [...exerciseFields];
+      const field = exerciseFields[currentIndex]
+      newExerciseFields[currentIndex] = {
+        color: (field.value === keyValue) ? "ok" : "error",
+        value: field.value,
       }
+      setExerciseFields(newExerciseFields)
+      setCurrentIndex(currentIndex+1)
 
       if (currentIndex === 1) {
         dispatch(startLesson());
@@ -45,11 +45,15 @@ export const Exercise: React.FC = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, [dispatch, isLastIndex]);
+  }, [dispatch, isLastIndex, exerciseFields, currentIndex]);
 
   const text = exerciseFields.map((item, key) => (
     <ExerciseChar key={key} data={item} isCurrent={key === currentIndex} />
   ));
 
   return <section>{text}</section>;
+};
+
+const calculateMistakes = (lesson: CharField[]) => {
+  return lesson.filter((val) => val.color === "error").length;
 };
