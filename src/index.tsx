@@ -1,15 +1,19 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import 'typeface-roboto';
-import App from './App';
+import "typeface-roboto";
+import App from "./App";
 
-import './index.css';
+import "./index.css";
+import { store } from "./Stores/store";
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById('root') as HTMLElement
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById("root") as HTMLElement
 );

@@ -1,50 +1,55 @@
-import {  useObserver } from "mobx-react";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { ExerciseChar } from "../../../components/ExerciseChar/ExerciseChar";
-import { exerciseStore } from "../../../Stores/ExerciseStore";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  endLesson,
+  startLesson,
+  ExerciseData,
+  processPressedKey
+} from "../../../Stores/ExerciseStore";
+import { store } from "../../../Stores/store";
 
 export const Exercise: React.FC = () => {
+  const dispatch = useDispatch();
 
-  const handleKeyPress = (e: KeyboardEvent) => {
-    let { currentIndex, processPressedKey: pressedKey } = exerciseStore;
-    if (e.key === "Space" && e.target === document.body) {
-      e.preventDefault();
-    }
-  
-    if (currentIndex === exerciseStore.lesson.lesson.length) {
-      exerciseStore.endLesson();
-      return;
-    }
-  
-    if (e.key === "Enter") {
-      pressedKey("\n");
-    } else {
-      pressedKey(e.key);
-    }
-  
-    if (currentIndex === 1) {
-      exerciseStore.startLesson();
-    }
-  };
+  const { lesson, currentIndex, exerciseFields } = useSelector(
+    (state: ExerciseData) => state
+  );
+  const isLastIndex = currentIndex === lesson.lesson.length
 
   useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      const { currentIndex } = store.getState();
+      if (e.key === "Space" && e.target === document.body) {
+        e.preventDefault();
+      }
+
+      if (isLastIndex) {
+        dispatch(endLesson());
+        return;
+      }
+
+      if (e.key === "Enter") {
+        dispatch(processPressedKey("\n"));
+      } else {
+        dispatch(processPressedKey(e.key));
+      }
+
+      if (currentIndex === 1) {
+        dispatch(startLesson());
+      }
+    };
+
     document.addEventListener("keydown", handleKeyPress);
-    exerciseStore.setExercise();
 
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
-    }
-  },[]);
+    };
+  }, [dispatch, isLastIndex]);
 
-  return useObserver(()=>{
-    const text = exerciseStore.exerciseFields.map((item, key) => (
-      <ExerciseChar
-        key={key}
-        data={item}
-        isCurrent={key === exerciseStore.currentIndex}
-      />
-    ));
+  const text = exerciseFields.map((item, key) => (
+    <ExerciseChar key={key} data={item} isCurrent={key === currentIndex} />
+  ));
 
-    return <section>{text}</section>;
-  });
-}
+  return <section>{text}</section>;
+};

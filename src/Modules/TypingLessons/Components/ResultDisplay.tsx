@@ -1,16 +1,30 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { useObserver } from 'mobx-react';
-import { exerciseStore } from '../../../Stores/ExerciseStore';
-import { Button } from '../../../components/Button/Button';
+import { Button } from "../../../components/Button/Button";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  calculateMistakes,
+  calculateTime,
+  ExerciseData,
+  reset
+} from "../../../Stores/ExerciseStore";
 
-
-export const ResultDisplay: React.FC = () => useObserver(()=>(
+export const ResultDisplay: React.FC = () => {
+  const { mistakes, time } = useSelector((state: ExerciseData) => {
+    return {
+      mistakes: calculateMistakes(state),
+      time: calculateTime(state)
+    };
+  });
+  const dispatch = useDispatch();
+  const resetHandler = () => dispatch(reset());
+  return (
     <>
-        <ul>
-            <li>Mistakes: {exerciseStore.mistakes}</li>
-            <li>Time: {exerciseStore.time}</li>
-        </ul>
-        <Button onClick={() => { exerciseStore.reset(); }}>Reset</Button>
+      <ul>
+        <li>Mistakes: {mistakes}</li>
+        <li>Time: {time}</li>
+      </ul>
+      <Button onClick={resetHandler}>Reset</Button>
     </>
-));
+  );
+};
