@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ExerciseChar } from "../../../components/ExerciseChar/ExerciseChar";
 
 export const Exercise: React.FC<{
@@ -6,9 +6,9 @@ export const Exercise: React.FC<{
   completeLesson: (stats: { mistakes: number; time: number }) => void;
 }> = ({ lesson = [], completeLesson }) => {
 
-  const [exerciseFields, setExerciseFields] = React.useState(lesson);
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [startTime, setStartTime] = React.useState<Date>()
+  const [exerciseFields, setExerciseFields] = useState<CharField[]>(lesson);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [startTime, setStartTime] = useState<Date>()
 
   const isLastIndex = currentIndex === exerciseFields.length;
 

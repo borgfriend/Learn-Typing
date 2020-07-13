@@ -19,8 +19,8 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson }) => (
 );
 
 export const Overview: React.FC = () => {
-  const overview = lessonData.map(val => (
-    <LessonCard key={val.id} lesson={val} />
+  const overview = lessonData.map((lesson) => (
+    <LessonCard {...{ lesson, key: lesson.id }} />
   ));
 
   return <div>{overview}</div>;

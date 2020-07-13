@@ -27,7 +27,7 @@ const App: React.FC = () => {
           const lessonId = parseInt(match.params.id, 10);
           const lesson = loadLesson(lessonId);
           
-          return <TypingLesson lesson={lesson} />;
+          return <TypingLesson {...{lesson}} />;
         }}
       />
     </main>

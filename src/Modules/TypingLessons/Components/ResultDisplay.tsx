@@ -1,13 +1,13 @@
 import * as React from "react";
 
 import { Button } from "../../../components/Button/Button";
-
+import { LessonStats } from "../TypingLesson";
 
 export const ResultDisplay: React.FC<{
-  mistakes: number;
-  time: number;
+  lessonStats: LessonStats;
   resetAction: () => void;
-}> = ({ mistakes, time, resetAction }) => {
+}> = ({ lessonStats, resetAction }) => {
+  const { mistakes, time } = lessonStats;
   return (
     <>
       <ul>

@@ -1,27 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "../../components/Card/Card";
 import { Exercise } from "./Components/Exercise";
 import { ResultDisplay } from "./Components/ResultDisplay";
 
+export interface LessonStats {
+  mistakes: number;
+  time: number;
+}
+
 export const TypingLesson: React.FC<{ lesson: CharField[] }> = ({ lesson }) => {
-  const [isComplete, setComplete] = React.useState(false);
-  const [lessonStats, setLessonStats] = React.useState({mistakes: 0, time: 0})
+  const [isComplete, setComplete] = useState<boolean>(false);
+  const [lessonStats, setLessonStats] = useState<LessonStats>({ mistakes: 0, time: 0 });
 
   const resetAction = () => setComplete(false);
-  const completeLesson = (stats: {mistakes: number, time: number})=> {
+  const completeLesson = (stats: LessonStats) => {
     setLessonStats(stats);
     setComplete(true);
-  }
+  };
 
   return (
     <Card>
       {isComplete ? (
-        <ResultDisplay
-          {...lessonStats}
-          resetAction={resetAction}
-        />
+        <ResultDisplay {...{ resetAction, lessonStats }} />
       ) : (
-        <Exercise {...{lesson, completeLesson}} />
+        <Exercise {...{ lesson, completeLesson }} />
       )}
     </Card>
   );
