@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../components/Button/Button";
-import { Card } from "../components/Card/Card";
-import lessonData from "../resources/lessons.json";
+import { Button } from "../../components/Button/Button";
+import { Card } from "../../components/Card/Card";
+import lessonData from "../../resources/lessons.json";
 
 interface LessonCardProps {
   lesson: Lesson;
