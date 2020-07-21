@@ -1,5 +1,7 @@
 import * as React from "react";
 import { Link, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import i18n from "../src/i18n/en.json";
 import { NavBar } from "./components/NavBar/NavBar";
 
@@ -16,11 +18,12 @@ const Navigation: React.FC = () => (
 
 const App: React.FC = () => {
   return (
-    <main>
+    <Router>
       <Navigation />
+
       <Route exact={true} path="/" component={Overview} />
       <Route path="/lesson:id" component={TypingLesson} />
-    </main>
+    </Router>
   );
 };
 
