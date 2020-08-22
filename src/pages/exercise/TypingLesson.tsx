@@ -16,7 +16,7 @@ export const TypingLesson: React.FC = () => {
     mistakes: 0,
     time: 0,
   });
-  const { id } = useParams();
+  const { id } = useParams<{id: string}>();
   const lessonId = parseInt(id, 10);
   const lesson = loadLesson(lessonId);
 
