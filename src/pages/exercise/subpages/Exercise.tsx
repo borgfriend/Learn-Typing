@@ -8,7 +8,7 @@ export const Exercise: React.FC<{
 
   const [exerciseFields, setExerciseFields] = useState<CharField[]>(lesson);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [startTime, setStartTime] = useState<Date>()
+  const [startTime, setStartTime] = useState<Date>(new Date())
 
   const isLastIndex = currentIndex === exerciseFields.length;
 

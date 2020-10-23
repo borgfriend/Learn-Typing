@@ -4,8 +4,11 @@ export const loadLesson = (id: number) => {
     return val.id === id;
   });
   const exerciseFields: CharField[] = [];
-  lesson.lesson.split("").forEach((item) => {
-    exerciseFields.push({ value: item, color: "transparent" });
-  });
+  if(lesson){
+    lesson.lesson.split("").forEach((item) => {
+      exerciseFields.push({ value: item, color: "transparent" });
+    });
+  }
+
   return exerciseFields;
 };
