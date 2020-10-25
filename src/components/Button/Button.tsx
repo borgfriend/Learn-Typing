@@ -10,7 +10,7 @@ const StyledButton = styled.button`
   font-weight: bold;
   cursor: pointer;
 `;
-const StyledDefaultButton = styled(StyledButton)`
+const PrimaryButton = styled(StyledButton)`
   background: blue;
 `;
 
@@ -28,9 +28,10 @@ export const Button: React.FC<IButtonProps> = ({
   children,
   color = "default",
 }) => {
-    if (color === "default"){
-        return (<StyledDefaultButton onClick={onClick}>{children}</StyledDefaultButton>)
-    } else {
-        return (<StyledButton onClick={onClick}>{children}</StyledButton>)
-    }
+  const buttonTypes = {
+    default: StyledButton,
+    primary: PrimaryButton,
+  };
+  const DisplayButton = buttonTypes[color];
+  return <DisplayButton onClick={onClick}>{children}</DisplayButton>;
 };
