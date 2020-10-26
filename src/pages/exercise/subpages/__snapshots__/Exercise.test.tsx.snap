@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an empty exercise 1`] = `
+<div>
+  <section />
+</div>
+`;
+
+exports[`renders an exercise 1`] = `
+.c0 {
+  font-family: "Courier New";
+  background-color: yellow;
+  -webkit-animation-name: jemkry;
+  animation-name: jemkry;
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+<div>
+  <section>
+    <span
+      class="c0"
+    >
+      a
+    </span>
+  </section>
+</div>
+`;
