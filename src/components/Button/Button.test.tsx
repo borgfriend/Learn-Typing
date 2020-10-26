@@ -21,6 +21,10 @@ it("can interact with the button", () => {
       {"Label"}
     </Button>
   );
-  fireEvent.click(container.firstChild as Element);
+
+  if (container.firstChild) {
+    fireEvent.click(container.firstChild);
+  }
+
   expect(mockFn).toBeCalled();
 });

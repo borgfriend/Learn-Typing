@@ -7,6 +7,10 @@ exports[`renders an empty exercise 1`] = `
 `;
 
 exports[`renders an exercise 1`] = `
+.c1 {
+  font-family: "Courier New";
+}
+
 .c0 {
   font-family: "Courier New";
   background-color: yellow;
@@ -24,6 +28,38 @@ exports[`renders an exercise 1`] = `
       class="c0"
     >
       a
+    </span>
+    <span
+      class="c1"
+    >
+      b
+    </span>
+  </section>
+</div>
+`;
+
+exports[`renders an exercise 2`] = `
+<div>
+  <section>
+    .c0 {
+  font-family: "Courier New";
+  background-color: lightgreen;
+}
+
+<span
+      class="c0"
+    >
+      a
+    </span>
+    .c0 {
+  font-family: "Courier New";
+  background-color: red;
+}
+
+<span
+      class="c0"
+    >
+      b
     </span>
   </section>
 </div>

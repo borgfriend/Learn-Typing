@@ -4,7 +4,7 @@ import { ExerciseChar } from "../../../components/ExerciseChar/ExerciseChar";
 export const Exercise: React.FC<{
   lesson: CharField[];
   completeLesson: (stats: { mistakes: number; time: number }) => void;
-}> = ({ lesson = [], completeLesson }) => {
+}> = ({ lesson, completeLesson }) => {
 
   const [exerciseFields, setExerciseFields] = useState<CharField[]>(lesson);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
