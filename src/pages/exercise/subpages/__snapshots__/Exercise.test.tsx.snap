@@ -7,12 +7,11 @@ exports[`renders an empty exercise 1`] = `
 `;
 
 exports[`renders an exercise 1`] = `
-.c1 {
+.c0 {
   font-family: "Courier New";
 }
 
-.c0 {
-  font-family: "Courier New";
+.c1 {
   background-color: yellow;
   -webkit-animation-name: jemkry;
   animation-name: jemkry;
@@ -25,12 +24,12 @@ exports[`renders an exercise 1`] = `
 <div>
   <section>
     <span
-      class="c0"
+      class="c0 c1"
     >
       a
     </span>
     <span
-      class="c1"
+      class="c0"
     >
       b
     </span>
@@ -43,21 +42,27 @@ exports[`renders an exercise 2`] = `
   <section>
     .c0 {
   font-family: "Courier New";
+}
+
+.c1 {
   background-color: lightgreen;
 }
 
 <span
-      class="c0"
+      class="c0 c1"
     >
       a
     </span>
     .c0 {
   font-family: "Courier New";
+}
+
+.c1 {
   background-color: red;
 }
 
 <span
-      class="c0"
+      class="c0 c1"
     >
       b
     </span>

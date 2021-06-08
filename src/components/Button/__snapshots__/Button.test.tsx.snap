@@ -23,12 +23,15 @@ exports[`renders a primary button 1`] = `
   padding: 0.5rem 0.75rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+.c1 {
   background: blue;
 }
 
 <div>
   <button
-    class="c0"
+    class="c0 c1"
   >
     Label
   </button>
