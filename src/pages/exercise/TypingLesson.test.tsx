@@ -1,19 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { loadLesson } from "../../resources/loadLesson";
-import { TypingLesson } from "./TypingLesson";
+import App from "../../App";
 
-it("displays a lesson", () => {
-  const route = "/lesson21";
-
+it("displays a lesson", async () => {
   window.scrollTo = jest.fn();
 
   render(
-    <MemoryRouter initialEntries={[route]}>
-      <TypingLesson />
+    <MemoryRouter initialEntries={[{ pathname: "/lesson21" }]}>
+      <App />
     </MemoryRouter>
   );
-  loadLesson(21);
-  const lessonElement = screen.getByText("fd fd fd");
-  expect(lessonElement).toBeInTheDocument();
+
+  const lessonElements = await screen.findAllByText("f");
+  expect(lessonElements.length).toBe(3);
 });
