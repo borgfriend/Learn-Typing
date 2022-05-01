@@ -7,7 +7,9 @@ import "./index.css";
 
 const container = document.getElementById("root");
 if (!container) throw Error("Container not found");
+
 const root = createRoot(container);
+
 root.render(
   <BrowserRouter>
     <App />

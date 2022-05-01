@@ -17,6 +17,7 @@ const PrimaryButton = styled(StyledButton)`
 interface IButtonProps {
   onClick?: () => void;
   color?: colors;
+  children?: React.ReactNode;
 }
 /**
  * A Button Component
