@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ExerciseChar } from "../../../components/ExerciseChar/ExerciseChar";
+import { ExerciseChar } from "../../../../src/components/ExerciseChar/ExerciseChar";
 
 export const Exercise: React.FC<{
   lesson: CharField[];

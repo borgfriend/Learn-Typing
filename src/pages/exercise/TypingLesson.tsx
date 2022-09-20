@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "../../components/Card/Card";
+import { Card } from "../../../src/components/Card/Card";
 import { Exercise } from "./subpages/Exercise";
 import { ResultDisplay } from "./subpages/ResultDisplay";
 import { useParams } from "react-router";
-import { loadLesson } from "../../resources/loadLesson";
+import { loadLesson } from "../../../src/resources/loadLesson";
 
 export interface LessonStats {
   mistakes: number;

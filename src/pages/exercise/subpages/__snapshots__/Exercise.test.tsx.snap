@@ -7,29 +7,15 @@ exports[`renders an empty exercise 1`] = `
 `;
 
 exports[`renders an exercise 1`] = `
-.c0 {
-  font-family: "Courier New";
-}
-
-.c1 {
-  background-color: yellow;
-  -webkit-animation-name: jemkry;
-  animation-name: jemkry;
-  -webkit-animation-duration: 8s;
-  animation-duration: 8s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
 <div>
   <section>
     <span
-      class="c0 c1"
+      class="sc-bczRLJ sc-hKMtZM giQkjG lfnGoX"
     >
       a
     </span>
     <span
-      class="c0"
+      class="sc-bczRLJ giQkjG"
     >
       b
     </span>
@@ -38,27 +24,15 @@ exports[`renders an exercise 1`] = `
 `;
 
 exports[`renders an exercise 2`] = `
-.c0 {
-  font-family: "Courier New";
-}
-
-.c1 {
-  background-color: lightgreen;
-}
-
-.c2 {
-  background-color: red;
-}
-
 <div>
   <section>
     <span
-      class="c0 c1"
+      class="sc-bczRLJ sc-gsnTZi giQkjG eyaram"
     >
       a
     </span>
     <span
-      class="c0 c2"
+      class="sc-bczRLJ sc-dkzDqf giQkjG kekkCb"
     >
       b
     </span>

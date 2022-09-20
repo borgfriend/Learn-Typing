@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a default button 1`] = `
-.c0 {
-  background: red;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 <div>
   <ul>
     <li>
@@ -23,7 +15,7 @@ exports[`renders a default button 1`] = `
     </li>
   </ul>
   <button
-    class="c0"
+    class="sc-bczRLJ fiMtFI"
   >
     Reset
   </button>
