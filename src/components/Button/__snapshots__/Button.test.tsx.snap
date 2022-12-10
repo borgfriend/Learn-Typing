@@ -1,9 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`renders a default button 1`] = `
 <div>
   <button
-    class="sc-bczRLJ fiMtFI"
+    class="sc-bcXHqe cuDkkp"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`renders a default button 1`] = `
 exports[`renders a primary button 1`] = `
 <div>
   <button
-    class="sc-bczRLJ sc-gsnTZi fiMtFI fmVnUV"
+    class="sc-bcXHqe sc-gswNZR cuDkkp kqiSou"
   >
     Label
   </button>

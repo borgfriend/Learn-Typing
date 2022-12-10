@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`renders an empty exercise 1`] = `
 <div>
@@ -10,12 +10,12 @@ exports[`renders an exercise 1`] = `
 <div>
   <section>
     <span
-      class="sc-bczRLJ sc-hKMtZM giQkjG lfnGoX"
+      class="sc-bcXHqe sc-hLBbgP fKOqTz WwMvq"
     >
       a
     </span>
     <span
-      class="sc-bczRLJ giQkjG"
+      class="sc-bcXHqe fKOqTz"
     >
       b
     </span>
@@ -27,12 +27,12 @@ exports[`renders an exercise 2`] = `
 <div>
   <section>
     <span
-      class="sc-bczRLJ sc-gsnTZi giQkjG eyaram"
+      class="sc-bcXHqe sc-gswNZR fKOqTz hlLNmh"
     >
       a
     </span>
     <span
-      class="sc-bczRLJ sc-dkzDqf giQkjG kekkCb"
+      class="sc-bcXHqe sc-dkrFOg fKOqTz cOXFeh"
     >
       b
     </span>

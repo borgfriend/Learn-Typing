@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`renders a default button 1`] = `
 <div>
@@ -15,7 +15,7 @@ exports[`renders a default button 1`] = `
     </li>
   </ul>
   <button
-    class="sc-bczRLJ fiMtFI"
+    class="sc-bcXHqe cuDkkp"
   >
     Reset
   </button>

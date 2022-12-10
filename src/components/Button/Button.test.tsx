@@ -1,6 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { Button } from "./Button";
+import {it, expect,vi } from "vitest"
 
 it("renders a default button", () => {
   const { container } = render(<Button></Button>);
@@ -15,7 +16,7 @@ it("renders a primary button", () => {
 });
 
 it("can interact with the button", () => {
-  const mockFn = jest.fn();
+  const mockFn = vi.fn();
   const { container } = render(
     <Button color="primary" onClick={mockFn}>
       {"Label"}
