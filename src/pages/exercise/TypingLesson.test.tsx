@@ -3,6 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import { expect, it, vi } from "vitest";
 import App from "../../App";
 it("displays a lesson", async () => {
+  //@ts-ignore
   window.scrollTo = vi.fn();
 
   render(
