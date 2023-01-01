@@ -12,7 +12,7 @@ const LessonCard: React.FC<LessonCardProps> = ({ lesson }) => (
   <Card>
     <h2>{lesson.title}</h2>
     <p>{lesson.description}</p>
-    <Link to={`/lesson${lesson.id}`}>
+    <Link to={`/lesson/${lesson.id}`}>
       <Button>Start Lesson</Button>
     </Link>
   </Card>
