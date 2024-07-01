@@ -8,8 +8,12 @@ export const Route = createRootRoute({
       <NavBar>
         <Link to="/" className="[&.active]:font-bold">
           Home
-        </Link>{" "}
-        <Link to="/lesson/21" className="[&.active]:font-bold">
+        </Link>
+        <Link
+          to="/lesson/$lessonId"
+          params={{ lessonId: "21" }}
+          className="[&.active]:font-bold"
+        >
           Test Lesson
         </Link>
       </NavBar>

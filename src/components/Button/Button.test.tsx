@@ -2,6 +2,7 @@ import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { Button } from "./Button";
 import {it, expect,vi } from "vitest"
+import "@testing-library/jest-dom/vitest";
 
 it("renders a default button", () => {
   const { container } = render(<Button />);

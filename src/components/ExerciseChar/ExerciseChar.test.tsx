@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { ExerciseChar } from "./ExerciseChar";
+import "@testing-library/jest-dom/vitest";
 
 it("renders default as transparent", () => {
   const { container } = render(
