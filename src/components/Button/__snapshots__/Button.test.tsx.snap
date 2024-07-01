@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders a default button 1`] = `
 <div>
   <button
-    class="sc-bcXHqe cuDkkp"
+    class="sc-aYaIB bhPAlR"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`renders a default button 1`] = `
 exports[`renders a primary button 1`] = `
 <div>
   <button
-    class="sc-bcXHqe sc-gswNZR cuDkkp kqiSou"
+    class="sc-aYaIB sc-gEvDqW bhPAlR dCeLBS"
   >
     Label
   </button>

@@ -1,5 +1,6 @@
+import { Link } from "@tanstack/react-router";
 import * as React from "react";
-import { Link } from "react-router-dom";
+
 import { Button } from "../../../src/components/Button/Button";
 import { Card } from "../../../src/components/Card/Card";
 import lessonData from "../../../src/resources/lessons.json";

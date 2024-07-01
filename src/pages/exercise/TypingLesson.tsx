@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "../../../src/components/Card/Card";
+import { loadLesson } from "../../../src/resources/loadLesson";
 import { Exercise } from "./subpages/Exercise";
 import { ResultDisplay } from "./subpages/ResultDisplay";
-import { useParams } from "react-router";
-import { loadLesson } from "../../../src/resources/loadLesson";
 
 export interface LessonStats {
   mistakes: number;
   time: number;
 }
 
-export const TypingLesson: React.FC = () => {
+export const TypingLesson: React.FC<{ id: string }> = ({ id }) => {
   const [isComplete, setComplete] = useState<boolean>(false);
   const [lessonStats, setLessonStats] = useState<LessonStats>({
     mistakes: 0,
     time: 0,
   });
-  const { id='' } = useParams<{id: string}>();
+
   const lessonId = parseInt(id, 10);
   const lesson = loadLesson(lessonId);
-  console.log({lesson, id})
+  console.log({ lesson, id });
 
   useEffect(() => {
     window.scrollTo(0, 0);

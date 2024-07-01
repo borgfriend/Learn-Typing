@@ -10,14 +10,15 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@tanstack/react-router": "^1.43.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "^6.24.0",
-    "react-router-dom": "^6.24.0",
     "styled-components": "^6.1.11",
     "typeface-roboto": "^1.1.13"
   },
   "devDependencies": {
+    "@tanstack/router-devtools": "^1.43.2",
+    "@tanstack/router-plugin": "^1.43.1",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
