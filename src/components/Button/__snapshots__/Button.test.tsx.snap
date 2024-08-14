@@ -3,7 +3,7 @@
 exports[`renders a default button 1`] = `
 <div>
   <button
-    class="sc-aYaIB bhPAlR"
+    class="sc-braxZu wJQOW"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`renders a default button 1`] = `
 exports[`renders a primary button 1`] = `
 <div>
   <button
-    class="sc-aYaIB sc-gEvDqW bhPAlR dCeLBS"
+    class="sc-braxZu sc-gJhJTp wJQOW dcSjso"
   >
     Label
   </button>
