@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@tanstack/router-devtools": "^1.47.5",
-    "@tanstack/router-plugin": "^1.47.0",
+    "@tanstack/router-plugin": "^1.52.0",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/react": "^18.3.3",
