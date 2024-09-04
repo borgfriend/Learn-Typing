@@ -1,12 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
-import { createRoot } from "react-dom/client";
 import { MemoryRouter } from "react-router";
 import App from "./App";
 import i18n from "./i18n/en.json";
- 
-import {expect, it} from 'vitest'
 
+import { expect, it } from "vitest";
 
 it("contains the app title", () => {
   render(

@@ -5,13 +5,13 @@ import {it, expect,vi } from "vitest"
 
 it("renders a default button", () => {
   const { container } = render(<Button></Button>);
-  expect(container.firstChild).toHaveStyle(`background-color: red`);
+  expect(container.firstChild).toHaveStyle(`background-color: rgb(255, 0 , 0)`);
   expect(container).toMatchSnapshot();
 });
 
 it("renders a primary button", () => {
   const { container } = render(<Button color="primary">{"Label"}</Button>);
-  expect(container.firstChild).toHaveStyle(`background-color: blue`);
+  expect(container.firstChild).toHaveStyle(`background-color: rgb(0, 0, 255)`);
   expect(container).toMatchSnapshot();
 });
 

@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  Link,
-  Outlet,
-  RouterProvider,
-} from "react-router-dom";
+import { Route, Routes } from "react-router";
+import { Link, Outlet } from "react-router-dom";
 import { NavBar } from "../src/components/NavBar/NavBar";
 import i18n from "../src/i18n/en.json";
 import { TypingLesson } from "./pages/exercise/TypingLesson";
@@ -21,19 +17,16 @@ const Navigation: React.FC = () => (
   </>
 );
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navigation />,
-    children: [
-      { path: "/", element: <Overview /> },
-      { path: "lesson/:id", element: <TypingLesson /> },
-    ],
-  },
-]);
-
 const App: React.FC = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Overview />} />
+        <Route path="lesson/:id" element={<TypingLesson />} />
+      </Routes>
+    </>
+  );
 };
 
 export default App;

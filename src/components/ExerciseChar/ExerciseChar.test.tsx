@@ -10,7 +10,7 @@ it("renders default as transparent", () => {
     ></ExerciseChar>
   );
 
-  expect(container.firstChild).toHaveStyle(`background-color: none`);
+  expect(container.firstChild).toHaveStyle(`background-color: rgba(0, 0, 0, 0)`);
 });
 
 it("renders ok green", () => {
@@ -21,7 +21,9 @@ it("renders ok green", () => {
     ></ExerciseChar>
   );
 
-  expect(container.firstChild).toHaveStyle(`background-color: lightgreen`);
+  expect(container.firstChild).toHaveStyle(
+    `background-color: rgb(144, 238, 144)`
+  );
 });
 
 it("renders error red", () => {
@@ -32,7 +34,7 @@ it("renders error red", () => {
     ></ExerciseChar>
   );
 
-  expect(container.firstChild).toHaveStyle(`background-color: red`);
+  expect(container.firstChild).toHaveStyle(`background-color: rgb(255,0,0)`);
 });
 
 it("renders current yellow", () => {
@@ -43,7 +45,7 @@ it("renders current yellow", () => {
     ></ExerciseChar>
   );
 
-  expect(container.firstChild).toHaveStyle(`background-color: yellow`);
+  expect(container.firstChild).toHaveStyle(`background-color: rgb(255,255,0)`);
 });
 
 it("renders converts enter into break yellow", () => {
@@ -54,6 +56,6 @@ it("renders converts enter into break yellow", () => {
     ></ExerciseChar>
   );
 
-  expect(container.firstChild).toHaveStyle(`background-color: yellow`);
+  expect(container.firstChild).toHaveStyle(`background-color: rgb(255,255,0)`);
   expect(container.querySelector("br")).toBeDefined();
 });
