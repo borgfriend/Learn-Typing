@@ -10,12 +10,12 @@ exports[`renders an exercise 1`] = `
 <div>
   <section>
     <span
-      class="sc-blHHSb sc-fAUdSK fysHgA jHLqBc"
+      class="sc-FEMpB sc-fLDLck cRvibt eWGIFq"
     >
       a
     </span>
     <span
-      class="sc-blHHSb fysHgA"
+      class="sc-FEMpB cRvibt"
     >
       b
     </span>
@@ -27,12 +27,12 @@ exports[`renders an exercise 2`] = `
 <div>
   <section>
     <span
-      class="sc-blHHSb sc-gtLWhw fysHgA grjdLC"
+      class="sc-FEMpB sc-gjcoXW cRvibt bdPGgx"
     >
       a
     </span>
     <span
-      class="sc-blHHSb sc-egkSDF fysHgA eCiSln"
+      class="sc-FEMpB sc-dVBluf cRvibt bNzGEa"
     >
       b
     </span>

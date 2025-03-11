@@ -25,7 +25,7 @@ describe("LessonCard", () => {
       </MemoryRouter>
     );
 
-    const link = getByRole("link", { name: /start lesson lesson 1/i });
+    const link = getByRole("link", { name: "Start Lesson" });
     expect(link).toHaveAttribute("href", "/lesson/1");
   });
 
@@ -35,8 +35,9 @@ describe("LessonCard", () => {
         <LessonCard lessonData={lessonData} />
       </MemoryRouter>
     );
+    
 
-    const button = getByRole("button", { name: /Start lesson lesson 1/i });
+    const button = getByRole("button", { name: "Start Lesson" });
     expect(button).toBeDefined();
   });
 });
