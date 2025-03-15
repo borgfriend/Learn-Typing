@@ -1,11 +1,12 @@
 import { fireEvent, render } from "@testing-library/react";
+import React from "react";
 import { expect, it, vi } from "vitest";
 import { Exercise } from "./Exercise";
 
 it("renders an empty exercise", () => {
 	const mockFn = vi.fn();
 	const { container } = render(
-		<Exercise lesson={[]} completeLesson={mockFn}></Exercise>,
+		<Exercise lesson={[]} completeLesson={mockFn} />,
 	);
 	expect(container).toMatchSnapshot();
 });
@@ -19,7 +20,7 @@ it("renders an exercise", () => {
 				{ value: "b", color: "transparent" },
 			]}
 			completeLesson={mockFn}
-		></Exercise>,
+		/>,
 	);
 	expect(container).toMatchSnapshot();
 

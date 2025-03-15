@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { Route, Routes } from "react-router";
 import { Link, Outlet } from "react-router-dom";
 import { NavBar } from "../src/components/NavBar/NavBar";

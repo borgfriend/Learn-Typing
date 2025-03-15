@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { describe, it, expect } from "vitest";
-import { LessonCard } from "../LessonCard";
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
+import { describe, expect, it } from "vitest";
+import { LessonCard } from "../LessonCard";
 
 describe("LessonCard", () => {
 	const lessonData = {

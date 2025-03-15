@@ -9,7 +9,7 @@ it("renders a default button", () => {
 		<ResultDisplay
 			lessonStats={{ mistakes: 0, time: 0 }}
 			resetAction={mockFn}
-		></ResultDisplay>,
+		/>,
 	);
 	expect(container).toMatchSnapshot();
 	const resetButton = getByText(i18n.Reset);
