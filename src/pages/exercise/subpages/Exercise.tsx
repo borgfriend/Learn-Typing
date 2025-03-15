@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { ExerciseChar } from "../../../../src/components/ExerciseChar/ExerciseChar";
 
 export const Exercise: React.FC<{
@@ -45,14 +46,7 @@ export const Exercise: React.FC<{
 		return () => {
 			document.removeEventListener("keydown", handleKeyPress);
 		};
-	}, [
-		isLastIndex,
-		exerciseFields,
-		currentIndex,
-		completeLesson,
-		setStartTime,
-		startTime,
-	]);
+	}, [isLastIndex, exerciseFields, currentIndex, completeLesson, startTime]);
 
 	const text = exerciseFields.map((item, key) => (
 		<ExerciseChar key={key} data={item} isCurrent={key === currentIndex} />

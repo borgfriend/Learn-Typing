@@ -1,8 +1,7 @@
-import * as React from "react";
-
+import type * as React from "react";
 import { Button } from "../../../../src/components/Button/Button";
 import { i18n } from "../../../../src/i18n/en";
-import { LessonStats } from "../TypingLesson";
+import type { LessonStats } from "../TypingLesson";
 
 export const ResultDisplay: React.FC<{
 	lessonStats: LessonStats;

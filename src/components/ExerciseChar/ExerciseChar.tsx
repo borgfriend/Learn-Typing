@@ -1,4 +1,4 @@
-import * as React from "react";
+import type * as React from "react";
 import styled, { keyframes } from "styled-components";
 
 const cursorBlink = keyframes`
