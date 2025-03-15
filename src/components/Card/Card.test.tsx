@@ -3,6 +3,6 @@ import { expect, it } from "vitest";
 import { Card } from "./Card";
 
 it("renders a default button", () => {
-  const { container } = render(<Card></Card>);
-  expect(container).toMatchSnapshot();
+	const { container } = render(<Card></Card>);
+	expect(container).toMatchSnapshot();
 });

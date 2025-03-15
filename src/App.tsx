@@ -7,26 +7,26 @@ import { TypingLesson } from "./pages/exercise/TypingLesson";
 import { Overview } from "./pages/overview/Overview";
 
 const Navigation: React.FC = () => (
-  <>
-    <NavBar>
-      <Link to="/">
-        <h1>{i18n.APP_TITLE}</h1>
-      </Link>
-    </NavBar>
-    <Outlet />
-  </>
+	<>
+		<NavBar>
+			<Link to="/">
+				<h1>{i18n.APP_TITLE}</h1>
+			</Link>
+		</NavBar>
+		<Outlet />
+	</>
 );
 
 const App: React.FC = () => {
-  return (
-    <>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Overview />} />
-        <Route path="lesson/:id" element={<TypingLesson />} />
-      </Routes>
-    </>
-  );
+	return (
+		<>
+			<Navigation />
+			<Routes>
+				<Route path="/" element={<Overview />} />
+				<Route path="lesson/:id" element={<TypingLesson />} />
+			</Routes>
+		</>
+	);
 };
 
 export default App;

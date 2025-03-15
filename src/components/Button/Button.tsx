@@ -15,9 +15,9 @@ const PrimaryButton = styled(StyledButton)`
 `;
 
 interface IButtonProps {
-  onClick?: () => void;
-  color?: colors;
-  children?: React.ReactNode;
+	onClick?: () => void;
+	color?: colors;
+	children?: React.ReactNode;
 }
 /**
  * A Button Component
@@ -25,14 +25,14 @@ interface IButtonProps {
  * @param props
  */
 export const Button: React.FC<IButtonProps> = ({
-  onClick,
-  children,
-  color = "default",
+	onClick,
+	children,
+	color = "default",
 }) => {
-  const buttonTypes = {
-    default: StyledButton,
-    primary: PrimaryButton,
-  };
-  const DisplayButton = buttonTypes[color];
-  return <DisplayButton onClick={onClick}>{children}</DisplayButton>;
+	const buttonTypes = {
+		default: StyledButton,
+		primary: PrimaryButton,
+	};
+	const DisplayButton = buttonTypes[color];
+	return <DisplayButton onClick={onClick}>{children}</DisplayButton>;
 };

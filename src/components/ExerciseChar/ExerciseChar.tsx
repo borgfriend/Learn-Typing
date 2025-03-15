@@ -29,27 +29,27 @@ const CurrentChar = styled(StyledExerciseChar)`
   animation-iteration-count: infinite;
 `;
 interface IExerciseChar {
-  data: CharField;
-  isCurrent: boolean;
+	data: CharField;
+	isCurrent: boolean;
 }
 
 export const ExerciseChar: React.FC<IExerciseChar> = ({ data, isCurrent }) => {
-  let displayChar = <>{data.value}</>;
-  if (data.value === "\n") {
-    displayChar = (
-      <span>
-        <br />
-      </span>
-    );
-  }
-  const displayMap = {
-    ok: CharOk,
-    error: CharError,
-    current: CurrentChar,
-    transparent: StyledExerciseChar,
-  };
-  const displayType = isCurrent ? "current" : data.color;
-  const DisplayElement = displayMap[displayType];
+	let displayChar = <>{data.value}</>;
+	if (data.value === "\n") {
+		displayChar = (
+			<span>
+				<br />
+			</span>
+		);
+	}
+	const displayMap = {
+		ok: CharOk,
+		error: CharError,
+		current: CurrentChar,
+		transparent: StyledExerciseChar,
+	};
+	const displayType = isCurrent ? "current" : data.color;
+	const DisplayElement = displayMap[displayType];
 
-  return <DisplayElement>{displayChar}</DisplayElement>;
+	return <DisplayElement>{displayChar}</DisplayElement>;
 };

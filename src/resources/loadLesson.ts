@@ -1,15 +1,14 @@
 import lessonData from "./lessons.json";
 export const loadLesson = (id: number) => {
-  const lesson = lessonData.find((val: Lesson) => {
-    return val.id === id;
-  });
-  const exerciseFields: CharField[] = [];
-  if(lesson){
-    lesson.lesson.split("").forEach((item) => {
-      exerciseFields.push({ value: item, color: "transparent" });
-    });
-  }
+	const lesson = lessonData.find((val: Lesson) => {
+		return val.id === id;
+	});
+	const exerciseFields: CharField[] = [];
+	if (lesson) {
+		lesson.lesson.split("").forEach((item) => {
+			exerciseFields.push({ value: item, color: "transparent" });
+		});
+	}
 
-  return exerciseFields;
+	return exerciseFields;
 };
-  
