@@ -28,6 +28,7 @@ const CurrentChar = styled(StyledExerciseChar)`
   animation-duration: 8s;
   animation-iteration-count: infinite;
 `;
+
 interface IExerciseChar {
 	data: CharField;
 	isCurrent: boolean;
