@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import styled from "styled-components";
 
 type colors = "default" | "primary";
@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   font-weight: bold;
   cursor: pointer;
 `;
+
 const PrimaryButton = styled(StyledButton)`
   background: blue;
 `;
