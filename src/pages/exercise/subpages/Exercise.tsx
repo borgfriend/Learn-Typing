@@ -50,7 +50,7 @@ export const Exercise: React.FC<{
 
 	const text = exerciseFields.map((item, key) => (
 		<ExerciseChar
-			key={item.value}
+			key={key + item.value}
 			data={item}
 			isCurrent={key === currentIndex}
 		/>
@@ -64,5 +64,5 @@ const calculateMistakes = (lesson: CharField[]) => {
 };
 
 export const calculatePassedTime = (startTime: Date) => {
-	return (new Date().getTime() - startTime.getTime()) / 1000;
+	return (Date.now() - startTime.getTime()) / 1000;
 };
