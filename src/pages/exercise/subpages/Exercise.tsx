@@ -48,11 +48,11 @@ export const Exercise: React.FC<{
 		};
 	}, [isLastIndex, exerciseFields, currentIndex, completeLesson, startTime]);
 
-	const text = exerciseFields.map((item, key) => (
+	const text = exerciseFields.map((item, index) => (
 		<ExerciseChar
-			key={key + item.value}
+			key={`${item.value}-${index}`}
 			data={item}
-			isCurrent={key === currentIndex}
+			isCurrent={index === currentIndex}
 		/>
 	));
 
