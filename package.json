@@ -10,31 +10,31 @@
 		"test": "vitest"
 	},
 	"dependencies": {
-		"react": "^19.2.4",
-		"react-dom": "^19.2.4",
-		"react-router": "^7.13.1",
-		"react-router-dom": "^7.13.1",
-		"styled-components": "^6.3.11",
+		"react": "^19.2.7",
+		"react-dom": "^19.2.7",
+		"react-router": "^7.17.0",
+		"react-router-dom": "^7.17.0",
+		"styled-components": "^6.4.2",
 		"typeface-roboto": "^1.1.13"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.4",
+		"@biomejs/biome": "2.4.16",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.2",
 		"@testing-library/user-event": "^14.6.1",
-		"@types/react": "^19.2.14",
+		"@types/react": "^19.2.16",
 		"@types/react-dom": "^19.2.3",
 		"@types/styled-components": "^5.1.36",
-		"@vitejs/plugin-react": "^5.1.4",
-		"typescript": "^5.9.3",
-		"vite": "^7.3.1",
-		"vitest": "^4.0.18"
+		"@vitejs/plugin-react": "^6.0.2",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.16",
+		"vitest": "^4.1.8"
 	},
 	"engines": {
 		"pnpm": ">=6.0.0"
 	},
 	"engineStrict": true,
-	"packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6",
+	"packageManager": "pnpm@11.5.1",
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
