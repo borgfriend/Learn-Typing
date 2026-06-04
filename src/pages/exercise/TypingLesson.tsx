@@ -20,7 +20,7 @@ export const TypingLesson: React.FC = () => {
 	const { id = "" } = useParams<{ id: string }>();
 	const lessonId = Number.parseInt(id, 10);
 	const lesson = loadLesson(lessonId);
-	console.log({ lesson, id });
+	
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
